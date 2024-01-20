@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #004187;
+}
+.main{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #011F3F;
+}
+.showlevel{
+    width: 100%;
+    height: 10vh;
+    background-color: #011F3F;
+}
+.level{
+    font-size: 3em;
+    font-weight: 800;
+    color: yellow;
+    text-align: center;
+    margin: auto;
+}
+.head{
+    height: max-content;
+    text-align: center;
+}
+.start{
+    font-size: 3em;
+    font-weight: 700;
+    color: yellow;
+    margin-top: 0.4em;
+    margin-bottom: 1em;
+}
+.place{
+    width: max-content;
+    height: max-content;
+}
+.part1,.part2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.click{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 1em;
+    border: 15px solid black;
+    border-radius: 50px;
+    font-size: 2em;
+    font-weight: 600;
+}
+.A{
+    background-color: red;
+}
+.B{
+    background-color: green;
+}
+.C{
+    background-color: yellow;
+}
+.D{
+    background-color: blue;
+}
+.pressed {
+    box-shadow: 10px 10px 60px white;
+    opacity: 0.8;
+}
+.wrong{
+    background-color: rgb(255, 60, 60);
+}
+.design{
+    background-color: aliceblue;
+    opacity: 1.2;
+}
+
+@media screen and (min-width : 460px ) and (max-width : 600px ) {
+    .start{
+        font-size: 2em;
+    }
+    .click{
+        width: 150px;
+        height: 150px;
+        border: 12px solid black;
+    }
+}
+
+@media screen  and (min-width : 260px )and (max-width : 460px ) {
+    .start{
+        font-size: 1em;
+    }
+    .click{
+        width: 100px;
+        height: 100px;
+        border: 9px solid black;
+        border-radius: 35px;
+        padding: 0.3em;
+        margin: 0.3em;
+    }
+    .level{
+        font-size: 2em;
+    }
+}
+
+@media screen  and (max-width : 260px ) {
+    .start{
+        font-size: 1em;
+    }
+    .click{
+        width: 80px;
+        height: 80px;
+        border: 7px solid black;
+        border-radius: 25px;
+        padding: 0.3em;
+        margin: 0.3em;
+    }
+    .level{
+        font-size: 2em;
+    }
+}
