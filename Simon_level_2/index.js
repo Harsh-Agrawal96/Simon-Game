@@ -6,6 +6,7 @@ var show = 1;
 
 document.addEventListener("keypress",function() {
     if(initialnumber == 0){
+        initialnumber = 1;
 
         nowsound(10);
         setTimeout(function() {
