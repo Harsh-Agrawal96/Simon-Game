@@ -128,3 +128,34 @@ body{
         font-size: 2em;
     }
 }
+
+.changeroute{
+    position: absolute;
+    width: max-content;
+    margin: auto;
+    top: 1vh;
+    right: 10px;
+
+    & > label{
+        font-size: 1.2em;
+        margin-right: 0.5em;
+        color: rgb(174, 174, 32);
+        font-weight: 600;
+    }
+    & select{
+        font-size: 16px;
+        margin-right: 10px;
+        padding: 4px 9px;
+        border-radius: 2px;
+        border : 1px solid black;
+        cursor: pointer;
+        background-color: rgb(183, 183, 183);
+    }
+    & > button {
+        padding: 4px 9px;
+        cursor: pointer;
+        background-color: rgb(183, 183, 183);
+        border : 1px solid black;
+        border-radius: 5px;
+    }
+}

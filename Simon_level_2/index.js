@@ -4,6 +4,19 @@ var n = 0; // value that represent the current number that you pressed in sequen
 var forremove = 0;
 var show = 1;
 
+
+function navigate() {
+    const folder = document.getElementById("folderSelect").value;
+    // Redirect based on the selected folder
+    if (folder === "Simon_level_1") {
+        window.location.href = "../Simon_level_1/index.html"; // Stay in Folder 1
+    } else if (folder === "Simon_level_2") {
+        window.location.href = "../Simon_level_2/index.html"; // Go to Folder 2
+    } else if (folder === "Simon_level_3") {
+        window.location.href = "../Simon_level_3/index.html"; // Go to Folder 3
+    }
+}
+
 document.addEventListener("keypress",function() {
     if(initialnumber == 0){
         initialnumber = 1;
@@ -60,22 +73,22 @@ for(var i=0;i<lengthofbutton;i++){
 function nowsound(data){
     switch(data){
 
-        case 0 : var forwrong = new Audio("sounds/wrong.mp3");
+        case 0 : var forwrong = new Audio("../sounds/wrong.mp3");
             forwrong.play();
             break;
-        case 1 : var block_A = new Audio("sounds/red.mp3");
+        case 1 : var block_A = new Audio("../sounds/red.mp3");
                 block_A.play();
         break;
-        case 2 : var block_B = new Audio("sounds/green.mp3");
+        case 2 : var block_B = new Audio("../sounds/green.mp3");
             block_B.play();
         break;
-        case 3 : var block_C = new Audio("sounds/yellow.mp3");
+        case 3 : var block_C = new Audio("../sounds/yellow.mp3");
             block_C.play();
         break;
-        case 4 : var block_D = new Audio("sounds/blue.mp3");
+        case 4 : var block_D = new Audio("../sounds/blue.mp3");
             block_D.play();
         break;
-        default : var last = new Audio("sounds/suru.wav");
+        default : var last = new Audio("../sounds/suru.wav");
             last.play();
     }
     
