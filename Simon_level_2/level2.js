@@ -4,22 +4,22 @@ var n = 0; // value that represent the current number that you pressed in sequen
 var forremove = 0;
 var show = 1;
 
+
 function navigate() {
     const folder = document.getElementById("folderSelect").value;
-    // Redirect based on the selected folder
     if (folder === "Simon_level_1") {
-        window.location.href = "../Simon_level_1/index.html"; // Stay in Folder 1
+        window.location.href = "../index.html";
     } else if (folder === "Simon_level_2") {
-        window.location.href = "../Simon_level_2/index.html"; // Go to Folder 2
+        window.location.href = "../Simon_level_2/level2.html";
     } else if (folder === "Simon_level_3") {
-        window.location.href = "../Simon_level_3/index.html"; // Go to Folder 3
+        window.location.href = "../Simon_level_3/level3.html";
     }
 }
 
 document.addEventListener("keypress",function() {
     if(initialnumber == 0){
         initialnumber = 1;
-        
+
         nowsound(10);
         setTimeout(function() {
             initialnumber = 1;
@@ -38,13 +38,13 @@ document.addEventListener("keypress",function() {
                 nowsound(changable);
                 setTimeout(function() {
                     show = 0;
-                },400);
+                },400); 
                 break;
                 case 3 : makeanimation("C");
                 nowsound(changable);
                 setTimeout(function() {
                     show = 0;
-                },400);
+                },400); 
                 break;
                 case 4 : makeanimation("D");
                 nowsound(changable);
@@ -68,7 +68,6 @@ for(var i=0;i<lengthofbutton;i++){
     });
 }
 
-
 // sounds that play on clicks according to number of clicked box
 function nowsound(data){
     switch(data){
@@ -88,67 +87,37 @@ function nowsound(data){
         case 4 : var block_D = new Audio("../sounds/blue.mp3");
             block_D.play();
         break;
-        default : var last = new Audio("../sounds/suru.wav");
+        default : var last = new Audio("../sounds/start.wav");
             last.play();
     }
     
 }
 
-
 //function for assign number to boxs as 1 to box A, 2 to box B, 3 to box C, 4 to box D.
 function makesound(event2){
     switch(event2){
 
-        case "A" : checkpressend_btn(1,event2);
+        case "A" : finalsound(1,event2);
         break;
-        case "B" : checkpressend_btn(2,event2);
+        case "B" : finalsound(2,event2);
         break;
-        case "C" : checkpressend_btn(3,event2);
+        case "C" : finalsound(3,event2);
         break;
-        case "D" : checkpressend_btn(4,event2);
+        case "D" : finalsound(4,event2);
         break;
     }
-}
-
-// function for display full series of sounds from start to new added sound
-function fullpath(){
-
-    let index = -1;
-    for(let i = 0 ;i<arr.length;i++){
-        const number1 = arr[i];
-        var value;
-        index = i;
-        switch(number1){
-            case 1 : value = "A";
-            break;
-            case 2 : value = "B";
-            break;
-            case 3 : value = "C";
-            break;
-            case 4 : value = "D";
-            break;
-        }
-        const number2 = value;
-        setTimeout(function() {
-            nowsound(number1);
-            makeanimation(number2);
-        }, (i+1)*400);
-    }
-    setTimeout(function() {
-        show = 0;
-    }, (index+1)*400+200);
 }
 
 // in this function we all see the click box is right or wrong
-function checkpressend_btn(data,key){
+function finalsound(data,key){
 
     const currentval = arr[n];
-    if(currentval == data){  // if click box is right then make sound and animation and also increase n.
+    if(currentval == data){ // if click box is right then make sound and animation and also increase n.
         nowsound(currentval);
         makeanimation(key);
         n++;
     }
-    else{ // if wrong then set all to default and make array empty to store new sequence
+    else{  // if wrong then set all to default and make array empty to store new sequence
         show = 1;
         n = 0;
         initialnumber = 0;
@@ -165,16 +134,32 @@ function checkpressend_btn(data,key){
         for(var i = 0 ;i<size;i++){
             arr.pop();
         }
-    } // if n ( reqresent current index of pressing ) is equal to size of array means all sequence is pressed by user is correct then add new and show full sequence in full path function.
+    }
+    // if n ( reqresent current index of pressing ) is equal to size of array means all sequence is pressed by user is correct then add new and show new number in sequence
     if(n == arr.length && forremove == 0){
         show = 1;
         var newnumber = Math.floor(Math.random()*3) + 1;
         arr.push(newnumber);
+        var newkey;
+        switch(newnumber){
+            case 1 : newkey = "A";
+            break;
+            case 2 : newkey = "B";
+            break;
+            case 3 : newkey = "C";
+            break;
+            case 4 : newkey = "D";
+            break;
+        }
         setTimeout(function() {
-            fullpath();
-        }, 300);
+            nowsound(newnumber);
+            makeanimation(newkey);
+            setTimeout( function() {
+                show = 0;
+            },400)
+        }, 500);
         n = 0; 
-    }
+    }   
 }
 
 // function for animation of background white while pressing on box.

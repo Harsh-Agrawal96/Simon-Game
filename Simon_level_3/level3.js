@@ -55,13 +55,12 @@ function stopclock(){
 
 function navigate() {
     const folder = document.getElementById("folderSelect").value;
-    // Redirect based on the selected folder
     if (folder === "Simon_level_1") {
-        window.location.href = "../Simon_level_1/index.html"; // Stay in Folder 1
+        window.location.href = "../index.html";
     } else if (folder === "Simon_level_2") {
-        window.location.href = "../Simon_level_2/index.html"; // Go to Folder 2
+        window.location.href = "../Simon_level_2/level2.html";
     } else if (folder === "Simon_level_3") {
-        window.location.href = "../Simon_level_3/index.html"; // Go to Folder 3
+        window.location.href = "../Simon_level_3/level3.html";
     }
 }
 
@@ -147,7 +146,7 @@ function nowsound(data){
         case 4 : var block_D = new Audio("../sounds/blue.mp3");
             block_D.play();
         break;
-        default : var last = new Audio("../sounds/suru.wav");
+        default : var last = new Audio("../sounds/start.wav");
             last.play();
     }
     
