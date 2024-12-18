@@ -5,26 +5,48 @@ The simon game is a clasical memory game where players must have to replicate a 
 
 ---
 
+## **Enjoy the Game**
+
+Get ready to fun with the Simon Game! 🎮 
+You can access the project from 👉 [here](https://harsh-agrawal96.github.io/Simon-Game/).
+
+---
+
 ## **About the Project**
 
 This frontend project named Simon-Game is designed with three distinct levels of functionality and complexity as below : 
 
-Level 1 : This is level which shows you the all the pattern of sequence every time and you need to replicate it for more points.
+- **Level 1 (Easy):**  
+   This is level which shows you the all the pattern of sequence every time and you need to replicate it for more points.
 
-Level 2 : This is level in which you only showed you the next added color and sound on sequence and you need to replicate the whole sequence for continue the game.
+- **Level 2 (Intermediate):**  
+   This is level in which you only showed you the next added color and sound on sequence and you need to replicate the whole sequence for continue the game.
 
-Level 3 : This level is similar with level 2 but it is time bounded, means every time for replicating the sequence you have only 15 seconds to do that and if you can't replicate the sequence or give wrong sequence then game ends.
+- **Level 3 (Hard):** 
+   This level is similar with level 2 but it is time bounded, means every time for replicating the sequence you have only 15 seconds to do that and if you can't replicate the sequence or give wrong sequence then game ends.
+
+Each level introduces a new twist, ensuring players stay engaged and challenged!
 
 ---
 
 ## **Tech Stack**
 
-- **Frontend:** [ HTML, Css, Javascript ]
+- **Frontend:** HTML, CSS, JavaScript
 
 ---
 
 ## **Installation**
 
+Follow these steps to run the project locally:
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yourproject.git
+   git clone https://github.com/Harsh-Agrawal96/Simon-Game.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd Simon-Game
+   ```
+
+3. Open the `index.html` file in your browser to start the game.
